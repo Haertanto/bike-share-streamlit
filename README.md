@@ -12,7 +12,8 @@ Proyek ini bertujuan untuk menganalisis data pada Bike Sharing Dataset. Tujuan a
 
 - **/data**: Direktori ini berisi data yang digunakan dalam proyek, dalam format .csv .
 - **/dashboard**: Direktori ini berisi dashboard.py yang digunakan untuk membuat dashboard hasil analisis data.
-- **bike-sharing-notebook.ipynb**: File ini yang digunakan untuk melakukan analisis data.
+- **bike-sharing-notebook.ipynb**: File ini yang saya buat untuk melakukan analisis data di Google Collab.
+- **notebook.ipynb**: File ini dibuat berdasarkan bike-sharing-notebook.ipynb
 
 ## Instalasi
 
@@ -36,7 +37,7 @@ Proyek ini bertujuan untuk menganalisis data pada Bike Sharing Dataset. Tujuan a
     cd bike-sharing/dashboard/
     streamlit run dashboard.py
     ```
-
+DEMO APP -> [BIKE SHARING](https://bike-share-app-haertanto.streamlit.app/) 
 ## Kontribusi
 Anda dapat berkontribusi pada proyek ini dengan melakukan pull request. Pastikan untuk menjelaskan perubahan yang Anda usulkan secara jelas dan menyeluruh.
 
