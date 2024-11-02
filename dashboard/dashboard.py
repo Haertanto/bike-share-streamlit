@@ -86,7 +86,7 @@ sum_order_items_df = sum_order(main_df_hour)
 season_df = macem_season(main_df_hour)
 
 #Melengkapi Dashboard dengan Berbagai Visualisasi Data
-st.header('Bike Sharing :sparkles:')
+st.header('Bike Sharing DATA :sparkles:')
 
 st.subheader('Daily Sharing')
 col1, col2, col3 = st.columns(3)
@@ -103,7 +103,7 @@ with col3:
     total_sum = cas_df.casual_sum.sum()
     st.metric("Total Casual", value=total_sum)
 
-st.subheader("Performa penjualan perusahaan dalam beberapa tahun terakhir")
+st.subheader("Performa Perusahaan dalam beberapa tahun terakhir")
 
 fig, ax = plt.subplots(figsize=(16, 8))
 ax.plot(
@@ -117,7 +117,7 @@ ax.tick_params(axis='y', labelsize=20)
 ax.tick_params(axis='x', labelsize=15)
 st.pyplot(fig)
 
-st.subheader("pada jam berapa yang paling banyak dan paling sedikit disewa?")
+st.subheader("Jam paling banyak/sedikit penyewa?")
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(35, 15))
 
 sns.barplot(x="hours", y="count_cr", data=sum_order_items_df.head(5), palette=["#D3D3D3", "#D3D3D3", "#90CAF9", "#D3D3D3", "#D3D3D3"], ax=ax[0])
@@ -138,7 +138,7 @@ ax[1].tick_params(axis='y', labelsize=35)
 ax[1].tick_params(axis='x', labelsize=30)
  
 st.pyplot(fig)
-st.subheader("musim apa yang paling banyak disewa?")
+st.subheader("Musim yang paling banyak penyewaan?")
 
 colors = ["#D3D3D3", "#D3D3D3", "#D3D3D3", "#90CAF9"]
 fig, ax = plt.subplots(figsize=(20, 10))
@@ -156,7 +156,7 @@ ax.tick_params(axis='x', labelsize=35)
 ax.tick_params(axis='y', labelsize=30)
 st.pyplot(fig)
 
-st.subheader("Perbandingan Customer yang Registered dengan casual")
+st.subheader("Perbandingan Penyewa yang Registered dengan casual")
 
 labels = 'casual', 'registered'
 sizes = [18.8, 81.2]
