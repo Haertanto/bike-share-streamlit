@@ -126,16 +126,5 @@ ax.tick_params(axis='x', labelsize=35)
 ax.tick_params(axis='y', labelsize=30)
 st.pyplot(fig)
 
-st.subheader("Perbandingan Customer yang Registered dengan casual")
 
-labels = 'casual', 'registered'
-sizes = [18.8, 81.2]
-explode = (0, 0.1) 
-
-fig1, ax1 = plt.subplots()
-ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',colors=["#D3D3D3", "#90CAF9"],
-        shadow=True, startangle=90)
-ax1.axis('equal')  
-
-st.pyplot(fig1)
 
