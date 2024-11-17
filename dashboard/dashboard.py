@@ -61,60 +61,22 @@ max_date_days = days_df["dteday"].max()
 min_date_hour = hours_df["dteday"].min()
 max_date_hour = hours_df["dteday"].max()
 
-with st.sidebar:
-    
-        # Mengambil start_date & end_date dari date_input
-    start_date, end_date = st.date_input(
-        label='Rentang Waktu',
-        min_value=min_date_days,
-        max_value=max_date_days,
-        value=[min_date_days, max_date_days])
-  
-main_df_days = days_df[(days_df["dteday"] >= str(start_date)) & 
-                       (days_df["dteday"] <= str(end_date))]
-
-main_df_hour = hours_df[(hours_df["dteday"] >= str(start_date)) & 
-                        (hours_df["dteday"] <= str(end_date))]
-
-hour_count_df = get_total_count_by_hour_df(main_df_hour)
-day_df_count_2011 = count_by_day_df(main_df_days)
-reg_df = total_registered_df(main_df_days)
-cas_df = total_casual_df(main_df_days)
-sum_order_items_df = sum_order(main_df_hour)
-season_df = macem_season(main_df_hour)
-
 #Melengkapi Dashboard dengan Berbagai Visualisasi Data
 st.header('Bike Sharing DATA :sparkles:')
-
-st.subheader('Daily Sharing')
-col1, col2, col3 = st.columns(3)
- 
-with col1:
-    total_orders = day_df_count_2011.count_cr.sum()
-    st.metric("Total Sharing Bike", value=total_orders)
-
-with col2:
-    total_sum = reg_df.register_sum.sum()
-    st.metric("Total Registered", value=total_sum)
-
-with col3:
-    total_sum = cas_df.casual_sum.sum()
-    st.metric("Total Casual", value=total_sum)
-
 
 st.subheader("Jam paling banyak/sedikit penyewa?")
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(35, 15))
 
 sns.barplot(x="hours", y="count_cr", data=sum_order_items_df.head(5), palette=["#000000", "#FF0000", "#00FF00", "#0000FF", "#00FFFF"], ax=ax[0])
 ax[0].set_ylabel(None)
-ax[0].set_xlabel("Hours (PM)", fontsize=30)
+ax[0].set_xlabel("Jam (PM)", fontsize=30)
 ax[0].set_title("Jam dengan banyak penyewa sepeda", loc="center", fontsize=30)
 ax[0].tick_params(axis='y', labelsize=35)
 ax[0].tick_params(axis='x', labelsize=30)
  
 sns.barplot(x="hours", y="count_cr", data=sum_order_items_df.sort_values(by="hours", ascending=True).head(5), palette=["#000000", "#FF0000", "#00FF00", "#0000FF", "#00FFFF"], ax=ax[1])
 ax[1].set_ylabel(None)
-ax[1].set_xlabel("Hours (AM)",  fontsize=30)
+ax[1].set_xlabel("Jam (AM)",  fontsize=30)
 ax[1].set_title("Jam dengan sedikit penyewa sepeda", loc="center", fontsize=30)
 ax[1].invert_xaxis()
 ax[1].yaxis.set_label_position("right")
