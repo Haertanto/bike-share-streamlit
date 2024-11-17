@@ -61,22 +61,7 @@ max_date_days = days_df["dteday"].max()
 min_date_hour = hours_df["dteday"].min()
 max_date_hour = hours_df["dteday"].max()
 
-with st.sidebar:
-    # Menambahkan logo perusahaan
-    st.image("https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg")
-    
-        # Mengambil start_date & end_date dari date_input
-    start_date, end_date = st.date_input(
-        label='Rentang Waktu',
-        min_value=min_date_days,
-        max_value=max_date_days,
-        value=[min_date_days, max_date_days])
-  
-main_df_days = days_df[(days_df["dteday"] >= str(start_date)) & 
-                       (days_df["dteday"] <= str(end_date))]
 
-main_df_hour = hours_df[(hours_df["dteday"] >= str(start_date)) & 
-                        (hours_df["dteday"] <= str(end_date))]
 
 hour_count_df = get_total_count_by_hour_df(main_df_hour)
 day_df_count_2011 = count_by_day_df(main_df_days)
