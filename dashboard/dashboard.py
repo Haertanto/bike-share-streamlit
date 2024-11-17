@@ -90,14 +90,14 @@ st.header('Bike Sharing :sparkles:')
 st.subheader("pada jam berapa yang paling banyak dan paling sedikit disewa?")
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(35, 15))
 
-sns.barplot(x="hours", y="count_cr", data=sum_order_items_df.head(5), palette=["#D3D3D3", "#D3D3D3", "#90CAF9", "#D3D3D3", "#D3D3D3"], ax=ax[0])
+sns.barplot(x="hours", y="count_cr", data=sum_order_items_df.head(5), palette=["#000000", "#FF0000", "#00FF00", "#0000FF", "#00FFFF"], ax=ax[0])
 ax[0].set_ylabel(None)
 ax[0].set_xlabel("Jam (PM)", fontsize=30)
 ax[0].set_title("Jam dengan banyak penyewa sepeda", loc="center", fontsize=30)
 ax[0].tick_params(axis='y', labelsize=35)
 ax[0].tick_params(axis='x', labelsize=30)
  
-sns.barplot(x="hours", y="count_cr", data=sum_order_items_df.sort_values(by="hours", ascending=True).head(5), palette=["#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3","#90CAF9"], ax=ax[1])
+sns.barplot(x="hours", y="count_cr", data=sum_order_items_df.sort_values(by="hours", ascending=True).head(5), palette=["#000000", "#FF0000", "#00FF00", "#0000FF", "#00FFFF"], ax=ax[1])
 ax[1].set_ylabel(None)
 ax[1].set_xlabel("Jam (AM)",  fontsize=30)
 ax[1].set_title("Jam dengan sedikit penyewa sepeda", loc="center", fontsize=30)
@@ -110,7 +110,7 @@ ax[1].tick_params(axis='x', labelsize=30)
 st.pyplot(fig)
 st.subheader("musim apa yang paling banyak disewa?")
 
-colors = ["#D3D3D3", "#D3D3D3", "#D3D3D3", "#90CAF9"]
+colors = ["#000000", "#FF0000", "#00FF00", "#0000FF"]
 fig, ax = plt.subplots(figsize=(20, 10))
 sns.barplot(
         y="count_cr", 
