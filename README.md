@@ -38,7 +38,6 @@ Proyek ini bertujuan untuk menganalisis data pada Bike Sharing Dataset. Tujuan a
     streamlit run dashboard.py
     ```
 DEMO APP -> [BIKE SHARING](https://bike-share-app-haertanto.streamlit.app/) 
-## Kontribusi
-Anda dapat berkontribusi pada proyek ini dengan melakukan pull request. Pastikan untuk menjelaskan perubahan yang Anda usulkan secara jelas dan menyeluruh.
+
 
 
