@@ -62,8 +62,6 @@ min_date_hour = hours_df["dteday"].min()
 max_date_hour = hours_df["dteday"].max()
 
 with st.sidebar:
-    # Menambahkan logo perusahaan
-    st.image("https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg")
     
         # Mengambil start_date & end_date dari date_input
     start_date, end_date = st.date_input(
@@ -103,19 +101,6 @@ with col3:
     total_sum = cas_df.casual_sum.sum()
     st.metric("Total Casual", value=total_sum)
 
-st.subheader("Performa Perusahaan dalam beberapa tahun terakhir")
-
-fig, ax = plt.subplots(figsize=(16, 8))
-ax.plot(
-    days_df["dteday"],
-    days_df["count_cr"],
-    marker='o', 
-    linewidth=2,
-    color="#90CAF9"
-)
-ax.tick_params(axis='y', labelsize=20)
-ax.tick_params(axis='x', labelsize=15)
-st.pyplot(fig)
 
 st.subheader("Jam paling banyak/sedikit penyewa?")
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(35, 15))
@@ -140,7 +125,7 @@ ax[1].tick_params(axis='x', labelsize=30)
 st.pyplot(fig)
 st.subheader("Musim yang paling banyak penyewaan?")
 
-colors = ["#D3D3D3", "#D3D3D3", "#D3D3D3", "#90CAF9"]
+colors = ["#000000", "#FF0000", "#00FF00", "#0000FF"]
 fig, ax = plt.subplots(figsize=(20, 10))
 sns.barplot(
         y="count_cr", 
@@ -155,17 +140,4 @@ ax.set_xlabel(None)
 ax.tick_params(axis='x', labelsize=35)
 ax.tick_params(axis='y', labelsize=30)
 st.pyplot(fig)
-
-st.subheader("Perbandingan Penyewa yang Registered dengan casual")
-
-labels = 'casual', 'registered'
-sizes = [18.8, 81.2]
-explode = (0, 0.1) 
-
-fig1, ax1 = plt.subplots()
-ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',colors=["#D3D3D3", "#90CAF9"],
-        shadow=True, startangle=90)
-ax1.axis('equal')  
-
-st.pyplot(fig1)
 
