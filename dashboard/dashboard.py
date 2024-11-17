@@ -62,8 +62,6 @@ min_date_hour = hours_df["dteday"].min()
 max_date_hour = hours_df["dteday"].max()
 
 with st.sidebar:
-    # Menambahkan logo perusahaan
-    st.image("https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg")
     
         # Mengambil start_date & end_date dari date_input
     start_date, end_date = st.date_input(
@@ -88,34 +86,6 @@ season_df = macem_season(main_df_hour)
 #Melengkapi Dashboard dengan Berbagai Visualisasi Data
 st.header('Bike Sharing :sparkles:')
 
-st.subheader('Daily Sharing')
-col1, col2, col3 = st.columns(3)
- 
-with col1:
-    total_orders = day_df_count_2011.count_cr.sum()
-    st.metric("Total Sharing Bike", value=total_orders)
-
-with col2:
-    total_sum = reg_df.register_sum.sum()
-    st.metric("Total Registered", value=total_sum)
-
-with col3:
-    total_sum = cas_df.casual_sum.sum()
-    st.metric("Total Casual", value=total_sum)
-
-st.subheader("Performa penjualan perusahaan dalam beberapa tahun terakhir")
-
-fig, ax = plt.subplots(figsize=(16, 8))
-ax.plot(
-    days_df["dteday"],
-    days_df["count_cr"],
-    marker='o', 
-    linewidth=2,
-    color="#90CAF9"
-)
-ax.tick_params(axis='y', labelsize=20)
-ax.tick_params(axis='x', labelsize=15)
-st.pyplot(fig)
 
 st.subheader("pada jam berapa yang paling banyak dan paling sedikit disewa?")
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(35, 15))
