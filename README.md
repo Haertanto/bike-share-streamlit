@@ -1,37 +1,37 @@
 # Bike Sharing Dashboard Streamlit
 
-## Project Analisis Data
+## Data Analysis Project
 
-Repository ini berisi proyek data analytics menggunakan BIKE SHARING DATASET
+This repository houses a data analytics project utilizing the BIKE SHARING DATASET using Streamlit.
 
-## Deskripsi
+## Description
 
-Proyek ini bertujuan untuk menganalisis data pada Bike Sharing Dataset. Tujuan akhirnya adalah untuk menghasilkan wawasan dan informasi yang berguna dari data yang dianalisis.
+The primary goal of this project is to delve into the Bike Sharing Dataset and extract meaningful insights and information.
 
-## Struktur Direktori
+## Directory Structure
 
-- **/data**: Direktori ini berisi data yang digunakan dalam proyek, dalam format .csv .
-- **/dashboard**: Direktori ini berisi dashboard.py yang digunakan untuk membuat dashboard hasil analisis data.
-- **bike-sharing-notebook.ipynb**: File ini yang saya buat untuk melakukan analisis data di Google Collab.
-- **notebook.ipynb**: File ini dibuat berdasarkan bike-sharing-notebook.ipynb
+- **/data**: Contains the CSV files used for the project.
+- **/dashboard**: Houses dashboard.py, the script responsible for creating the data visualization dashboard.
+- **bike-sharing-notebook.ipynb**: The original Jupyter Notebook for data analysis created in Google Colab.
+- **notebook.ipynb**: A refined version based on the original notebook.
 
-## Instalasi
+## Installation
 
-1. Clone repository ini ke komputer lokal Anda menggunakan perintah berikut:
+1. Clone this repository:
 
    ```shell
    git clone https://github.com/Haertanto/bike-share-streamlit.git
    ```
 
-2. Pastikan Anda memiliki lingkungan Python yang sesuai dan pustaka-pustaka yang diperlukan. Anda dapat menginstal pustaka-pustaka tersebut dengan menjalankan perintah berikut:
+2. Ensure you have a compatible Python environment and the necessary libraries. Install them using: 
 
     ```shell
     pip install streamlit
     pip install -r requirements.txt
     ```
 
-## Penggunaan
-1. Masuk ke direktori proyek (Local):
+## Usage
+1. Navigate to the Project Directory:
 
     ```shell
     cd bike-share/streamlit/dashboard/
