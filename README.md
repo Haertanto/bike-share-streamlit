@@ -37,7 +37,7 @@ The primary goal of this project is to delve into the Bike Sharing Dataset and e
     cd bike-share/streamlit/dashboard/
     streamlit run dashboard.py
     ```
-DEMO APP -> [BIKE SHARING](https://bike-share-app-haertanto.streamlit.app/) 
+
 
 
 
